@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marielle Modesto | UI/UX Designer & Frontend Developer</title>
+<link rel="stylesheet" href="css/landingpage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">Marielle<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text" data-animate>
+      <p class="hero-greet">Hi, I'm Marielle</p>
+      <h1 class="hero-title">Junior UI/UX Designer &amp;<br>Frontend Developer</h1>
+      <p class="hero-desc">I design intuitive digital experiences that combine beautiful interfaces with thoughtful user experiences.</p>
+      <a href="#projects" class="btn-primary">View My Work</a>
+    </div>
+    <div class="hero-image" data-animate>
+      <div class="photo-card">
+        <img src="images/profile.png" alt="Portrait of Marielle Modesto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <h2 class="section-title" data-animate>About Me</h2>
+
+    <div class="about-text" data-animate>
+      <p>Hi, I'm Marielle Modesto, a Junior UI/UX Designer and Frontend Developer with a background in Information Technology. I enjoy creating intuitive, accessible, and visually engaging digital experiences that solve real user problems.</p>
+      <p>My experience in frontend development helps me design interfaces that are not only aesthetically pleasing but also practical to implement. I believe great design comes from understanding users, paying attention to detail, and continuously improving through feedback.</p>
+      <p>I'm currently seeking opportunities to grow as a UI/UX Designer, collaborate with innovative teams, and contribute to products that create meaningful experiences for users.</p>
+    </div>
+
+    <div class="skills" data-animate>
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Design</h4>
+          <ul>
+            <li><i class="fa-solid fa-pen-ruler"></i> UI Design</li>
+            <li><i class="fa-regular fa-object-group"></i> Wireframing</li>
+            <li><i class="fa-solid fa-layer-group"></i> Design System</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Development</h4>
+          <ul>
+            <li><i class="fa-brands fa-html5"></i> HTML</li>
+            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+            <li><i class="fa-brands fa-square-js"></i> JAVASCRIPT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <h2 class="section-title" data-animate>Projects</h2>
+
+    <div class="carousel-wrap" data-animate>
+      <button class="carousel-arrow left" id="prevBtn" aria-label="Previous project">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="carousel" id="carousel">
+
+        <article class="project-card">
+          <span class="project-num">01</span>
+          <div class="project-thumb thumb-teethnology">
+            <div class="thumb-mock">
+              <i class="fa-solid fa-tooth"></i>
+              <p>TEETHNOLOGY</p>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Teethnology</h3>
+            <p>Capstone Project</p>
+            <a href="#" class="btn-view">View</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-num">02</span>
+          <div class="project-thumb thumb-placeholder">
+            <span class="building-badge">Building....</span>
+          </div>
+          <div class="project-body">
+            <h3>Contract Verifier</h3>
+            <p>Internship Project</p>
+            <a href="#" class="btn-view">View</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-num">03</span>
+          <div class="project-thumb thumb-placeholder"></div>
+          <div class="project-body">
+            <h3>Sitetuation</h3>
+            <p>Academic Project</p>
+            <a href="#" class="btn-view">View</a>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="carousel-arrow right" id="nextBtn" aria-label="Next project">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title" data-animate>Contact</h2>
+
+    <div class="contact-grid">
+      <div class="contact-text" data-animate>
+        <h3>Let's Connect</h3>
+        <p>I'm currently open to UI/UX Design, Frontend Development, internship, and full-time opportunities. If you're looking for someone who's passionate about creating intuitive digital experiences, I'd love to hear from you.</p>
+        <p>Feel free to reach out through email or connect with me on LinkedIn. I'm always happy to discuss new ideas, collaborations, or career opportunities.</p>
+      </div>
+
+      <div class="contact-links" data-animate>
+        <a href="mailto:modestomarielle15@gmail.com" class="contact-item">
+          <span class="icon-circle"><i class="fa-solid fa-envelope"></i></span>
+          <span class="contact-detail">
+            <strong>Gmail</strong>
+            <span>modestomarielle15@gmail.com</span>
+          </span>
+        </a>
+        <a href="#" class="contact-item">
+          <span class="icon-circle"><i class="fa-brands fa-linkedin-in"></i></span>
+          <span class="contact-detail">
+            <strong>LinkedIn</strong>
+            <span>Marielle Modesto</span>
+          </span>
+        </a>
+        <a href="#" class="contact-item">
+          <span class="icon-circle"><i class="fa-brands fa-github"></i></span>
+          <span class="contact-detail">
+            <strong>GitHub</strong>
+            <span>Marielle Modesto</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-note">Designed &amp; built by Marielle Modesto</p>
+  </div>
+</section>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
