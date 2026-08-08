@@ -2,9 +2,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --purple: #8b5cf6;
-  --purple-light: #a78bfa;
-  --purple-deep: #7c3aed;
+  --purple: #9e30fe;
+  --purple-light: #b25bff;
+  --purple-deep: #7a0ce0;
   --gray-dark: #5b5b63;
   --gray-mid: #706f7d;
   --text-light: #f4f2f8;
@@ -19,7 +19,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--text-light);
-  background: linear-gradient(180deg, #5c5b63 0%, #6d6577 22%, #7d6b96 45%, #9370c4 70%, #a97bde 100%);
+  background: linear-gradient(180deg, #000000 9%, #240043 39%, #360064 61%, #8708f5 79%, #9e30fe 96%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
