@@ -1,41 +1,26 @@
-"""
-Simple local server for the portfolio website.
+"""Serve the portfolio locally with Flask.
 
-Run this with:
-    python server.py
-
-Then open http://localhost:8000 in your browser.
-No installation needed — uses only Python's built-in libraries.
+Run from this folder with:
+    ../venv/Scripts/python.exe app.py
 """
 
-import http.server
-import socketserver
-import webbrowser
-import os
+from pathlib import Path
 
-PORT = 8000
-DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+from flask import Flask, send_from_directory
 
-
-class Handler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=DIRECTORY, **kwargs)
+PORTFOLIO_DIR = Path(__file__).resolve().parent
+app = Flask(__name__, static_folder=None)
 
 
-def run_server():
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        url = f"http://localhost:{PORT}"
-        print(f"Serving portfolio at {url}")
-        print("Press Ctrl+C to stop the server.")
-        try:
-            webbrowser.open(url)
-        except Exception:
-            pass
-        try:
-            httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("\nServer stopped.")
+@app.get("/")
+def home():
+    return send_from_directory(PORTFOLIO_DIR, "index.html")
+
+
+@app.get("/<path:filename>")
+def portfolio_file(filename: str):
+    return send_from_directory(PORTFOLIO_DIR, filename)
 
 
 if __name__ == "__main__":
-    run_server()
+    app.run(host="127.0.0.1", port=5000, debug=False)
