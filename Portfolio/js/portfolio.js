@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const projects = window.portfolioProjects || [];
   const certificates = window.portfolioCertificates || [];
-  const projectGrid = document.getElementById('projectGrid');
   const roleProjectGrid = document.getElementById('roleProjectGrid');
   const certificateGrid = document.getElementById('certificateGrid');
   const modal = document.getElementById('certificateModal');
@@ -12,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const rolesMenuButton = document.getElementById('rolesMenuButton');
   const rolesMenu = document.getElementById('rolesMenu');
+  const emptyCertificates = document.querySelector('.empty-certificates');
 
   function projectCard(project, index) {
+    const cover = project.cover
+      ? `<img src="${project.cover}" alt="${project.title} project preview" loading="lazy">`
+      : `<div class="generated-cover-content"><span class="generated-cover-label">${project.coverLabel}</span><i class="fa-solid ${project.coverIcon}" aria-hidden="true"></i><span class="generated-cover-title">${project.title}</span><div class="generated-cover-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>`;
     return `<article class="project-card">
       <a class="project-card-link" href="project.html?project=${encodeURIComponent(project.id)}" aria-label="View ${project.title} project details">
-        <div class="project-image"><img src="${project.cover}" alt="${project.title} project preview" loading="lazy"><span class="project-count">0${index + 1}</span></div>
-        <div class="project-card-copy"><div><h3>${project.title}</h3><p>${project.type}</p></div><span class="project-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+        <div class="project-image ${project.cover ? '' : `project-image-generated ${project.coverStyle || ''}`}">${cover}<span class="project-count">${String(index + 1).padStart(2, '0')}</span></div>
+        <div class="project-card-copy"><div><h3>${project.title}</h3><p>${project.type}${project.date ? ` · ${project.date}` : ''}</p><p class="project-card-summary">${project.summary}</p></div><span class="project-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
       </a>
     </article>`;
   }
@@ -26,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     target.innerHTML = list.map((project) => projectCard(project, projects.indexOf(project))).join('');
   }
 
-  renderProjects(projectGrid, projects);
   renderProjects(roleProjectGrid, projects);
 
   function applyRoleFilter(role) {
@@ -76,14 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
   }));
 
+  emptyCertificates.hidden = certificates.length > 0;
   certificates.forEach((certificate) => {
     const card = document.createElement('article');
     card.className = 'certificate-card';
-    card.innerHTML = `<button class="certificate-preview-button" type="button" aria-label="Preview ${certificate.title}"><img src="${certificate.preview}" alt="Preview of ${certificate.title}" loading="lazy"></button><h3>${certificate.title}</h3><a class="button button-primary" href="${certificate.file}" target="_blank" rel="noopener">Open certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
-    card.querySelector('button').addEventListener('click', () => {
-      modalTitle.textContent = certificate.title;
+    card.innerHTML = `<button class="certificate-preview-button" type="button" aria-label="Preview ${certificate.title}"><img src="${certificate.preview}" alt="Preview of ${certificate.title}" loading="lazy"><span class="certificate-card-copy"><span class="certificate-card-title">${certificate.title}</span>${certificate.subject ? `<span class="certificate-card-subject">${certificate.subject}</span>` : ''}<span class="certificate-card-issuer">${certificate.issuer}</span></span></button><a class="button button-primary" href="${certificate.file}" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
+    card.querySelector('.certificate-preview-button').addEventListener('click', () => {
+      modalTitle.textContent = [certificate.title, certificate.subject, certificate.issuer].filter(Boolean).join(' | ');
       modalPreview.src = certificate.preview;
-      modalPreview.alt = `Preview of ${certificate.title}`;
+      modalPreview.alt = `Preview of ${certificate.title}${certificate.subject ? `: ${certificate.subject}` : ''}`;
       modalOpen.href = certificate.file;
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
