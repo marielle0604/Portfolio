@@ -9,6 +9,6 @@ This portfolio is built with vanilla HTML, CSS, and JavaScript for GitHub Pages 
 ## Deployment
 - Push the repo to GitHub
 - Enable GitHub Pages
-- Use the root or the `Portfolio` folder as the Pages source, depending on your repo settings
 
-No Flask server is required for this project.
+Link for this Repo:
+https://marielle0604.github.io/Portfolio/
