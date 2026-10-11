@@ -188,5 +188,11 @@ window.portfolioCertificates = [
     issuer: 'Fortinet Training Institute',
     preview: 'images/certificate_of_course_completion_Fotinet.png',
     file: 'https://drive.google.com/file/d/1OjBx41wJv0j8EAZpGkByqkeXFgFIIQNq/view?usp=drive_link'
+  },
+  {
+    title: 'Introduction to Excel',
+    issuer: 'Google Drive Certificate',
+    preview: 'images/Associate_Data_Analyts.png',
+    file: 'https://drive.google.com/file/d/1T7i0gtid7B1TuuSLAtgO8cT1qwckd7KG/view?usp=sharing'
   }
 ];
