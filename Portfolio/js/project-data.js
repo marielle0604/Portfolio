@@ -192,7 +192,7 @@ window.portfolioCertificates = [
   {
     title: 'Introduction to Excel',
     issuer: 'Google Drive Certificate',
-    preview: 'images/Associate_Data_Analyts.png',
+    preview: 'images/Introduction_to_Excel_Certificate.png',
     file: 'https://drive.google.com/file/d/1T7i0gtid7B1TuuSLAtgO8cT1qwckd7KG/view?usp=sharing'
   }
 ];
