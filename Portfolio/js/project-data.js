@@ -194,5 +194,11 @@ window.portfolioCertificates = [
     issuer: 'Google Drive Certificate',
     preview: 'images/Introduction_to_Excel_Certificate.png',
     file: 'https://drive.google.com/file/d/1T7i0gtid7B1TuuSLAtgO8cT1qwckd7KG/view?usp=sharing'
+  },
+  {
+    title: 'Introduction to Figma',
+    issuer: 'Google Drive Certificate',
+    preview: 'images/Introduction_to_Figma_Certificate.png',
+    file: 'https://drive.google.com/file/d/1LFTu_a7ARFOMUprQZs4rFSV05EoBBYc1/view?usp=sharing'
   }
 ];
