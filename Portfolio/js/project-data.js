@@ -154,12 +154,14 @@ window.portfolioCertificates = [
   {
     title: 'Data Analytics Essentials',
     issuer: 'Cisco Networking Academy',
+    type: 'Data Analytics',
     preview: 'images/Data_Analytics_Essencials.png',
     file: 'https://drive.google.com/file/d/1PPQYKnc1cKEJhpJG1mljCkHb7aaDhpwm/view?usp=sharing'
   },
   {
     title: 'Associate Data Analyst',
     issuer: 'DataCamp',
+    type: 'Data Analytics',
     preview: 'images/Associate_Data_Analyts.png',
     file: 'https://drive.google.com/file/d/1fERlFqad01_BLUmv1NrclS37UoBAT4UC/view?usp=drive_link'
   },
@@ -167,6 +169,7 @@ window.portfolioCertificates = [
     title: 'Certificate of Participation',
     subject: 'HISS! All About Python (Py Fundamentals)',
     issuer: 'Google Developer Group PUP Manila',
+    type: 'Webinar',
     preview: 'images/Certificate_of_Appreciation.png',
     file: 'https://drive.google.com/file/d/17NKxLRrWYRH8NPbRgp9jMIVRqLqYFvnW/view?usp=drive_link'
   },
@@ -174,30 +177,35 @@ window.portfolioCertificates = [
     title: 'Certificate of Recognition',
     subject: 'CyberKada Talks',
     issuer: 'College of Computer and Information Science, PUP',
+    type: 'Webinar',
     preview: 'images/Certificate_of_Recognition.png',
     file: 'https://drive.google.com/file/d/1bM1zJtQY2DIGWfnfRdSZrkmwc8PK120U/view?usp=drive_link'
   },
   {
     title: 'Certificate of Course Completion',
     issuer: 'Cisco Networking Academy',
+    type: 'CyberSecurity',
     preview: 'images/Certificate_of_course_completion_CISCO.png',
     file: 'https://drive.google.com/file/d/1RhcRTTEir_Za7fja-DKYPqZumLU_Xucm/view?usp=drive_link'
   },
   {
     title: 'Certificate of Course Completion',
     issuer: 'Fortinet Training Institute',
+    type: 'CyberSecurity',
     preview: 'images/certificate_of_course_completion_Fotinet.png',
     file: 'https://drive.google.com/file/d/1OjBx41wJv0j8EAZpGkByqkeXFgFIIQNq/view?usp=drive_link'
   },
   {
     title: 'Introduction to Excel',
-    issuer: 'Google Drive Certificate',
+    issuer: 'DataCamp',
+    type: 'Data Analytics',
     preview: 'images/Introduction_to_Excel_Certificate.png',
     file: 'https://drive.google.com/file/d/1T7i0gtid7B1TuuSLAtgO8cT1qwckd7KG/view?usp=sharing'
   },
   {
     title: 'Introduction to Figma',
-    issuer: 'Google Drive Certificate',
+    issuer: 'Simplilearn',
+    type: 'UI/UX',
     preview: 'images/Introduction_to_Figma_Certificate.png',
     file: 'https://drive.google.com/file/d/1LFTu_a7ARFOMUprQZs4rFSV05EoBBYc1/view?usp=sharing'
   }

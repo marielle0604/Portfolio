@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalPreview = document.getElementById('certificatePreview');
   const modalOpen = document.getElementById('certificateOpen');
   const nav = document.getElementById('mainNav');
+  const certificateFilterButtons = document.querySelectorAll('[data-certificate-filter]');
   const menuToggle = document.getElementById('menuToggle');
   const rolesMenuButton = document.getElementById('rolesMenuButton');
   const rolesMenu = document.getElementById('rolesMenu');
@@ -78,22 +79,44 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
   }));
 
-  emptyCertificates.hidden = certificates.length > 0;
-  certificates.forEach((certificate) => {
-    const card = document.createElement('article');
-    card.className = 'certificate-card';
-    card.innerHTML = `<button class="certificate-preview-button" type="button" aria-label="Preview ${certificate.title}"><img src="${certificate.preview}" alt="Preview of ${certificate.title}" loading="lazy"><span class="certificate-card-copy"><span class="certificate-card-title">${certificate.title}</span>${certificate.subject ? `<span class="certificate-card-subject">${certificate.subject}</span>` : ''}<span class="certificate-card-issuer">${certificate.issuer}</span></span></button><a class="button button-primary" href="${certificate.file}" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
-    card.querySelector('.certificate-preview-button').addEventListener('click', () => {
-      modalTitle.textContent = [certificate.title, certificate.subject, certificate.issuer].filter(Boolean).join(' | ');
-      modalPreview.src = certificate.preview;
-      modalPreview.alt = `Preview of ${certificate.title}${certificate.subject ? `: ${certificate.subject}` : ''}`;
-      modalOpen.href = certificate.file;
-      modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      modal.querySelector('.modal-close').focus();
+  function renderCertificates(filter = 'All') {
+    const filteredCertificates = filter === 'All'
+      ? certificates
+      : certificates.filter((certificate) => certificate.type === filter);
+
+    certificateGrid.innerHTML = '';
+    emptyCertificates.hidden = filteredCertificates.length > 0;
+
+    filteredCertificates.forEach((certificate) => {
+      const card = document.createElement('article');
+      card.className = 'certificate-card';
+      card.innerHTML = `<button class="certificate-preview-button" type="button" aria-label="Preview ${certificate.title}"><img src="${certificate.preview}" alt="Preview of ${certificate.title}" loading="lazy"><span class="certificate-card-copy"><span class="certificate-card-title">${certificate.title}</span>${certificate.subject ? `<span class="certificate-card-subject">${certificate.subject}</span>` : ''}<span class="certificate-card-issuer">${certificate.issuer}</span></span></button><a class="button button-primary" href="${certificate.file}" target="_blank" rel="noopener noreferrer">Open certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
+      card.querySelector('.certificate-preview-button').addEventListener('click', () => {
+        modalTitle.textContent = [certificate.title, certificate.subject, certificate.issuer].filter(Boolean).join(' | ');
+        modalPreview.src = certificate.preview;
+        modalPreview.alt = `Preview of ${certificate.title}${certificate.subject ? `: ${certificate.subject}` : ''}`;
+        modalOpen.href = certificate.file;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('.modal-close').focus();
+      });
+      certificateGrid.append(card);
     });
-    certificateGrid.append(card);
+  }
+
+  certificateFilterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.certificateFilter;
+      document.querySelectorAll('[data-certificate-filter]').forEach((filterButton) => {
+        const active = filterButton === button;
+        filterButton.classList.toggle('active', active);
+        filterButton.setAttribute('aria-pressed', String(active));
+      });
+      renderCertificates(filter);
+    });
   });
+
+  renderCertificates();
 
   modal.querySelectorAll('[data-close-modal]').forEach((button) => button.addEventListener('click', () => {
     modal.hidden = true;
