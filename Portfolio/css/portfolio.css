@@ -208,8 +208,15 @@ img { display: block; max-width: 100%; }
   .hero-index { gap: 8px; font-size: .54rem; }
   .index-line { width: 40px; }
   .skill-groups { grid-template-columns: 1fr; gap: 22px; }
+  .role-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .role-filter { min-height: 42px; width: 100%; }
   .role-project-grid { grid-template-columns: 1fr; }
   .role-project-grid .project-image { height: 220px; }
+  .certificate-grid { grid-template-columns: 1fr; }
+  .certificate-card { padding: 12px; }
+  .certificate-card-copy { padding: 12px 2px 2px; }
+  .certificate-card-title { font-size: 1.6rem; line-height: 1.1; }
+  .certificate-card-subject { font-size: .88rem; }
   .contact-panel { align-items: flex-start; flex-direction: column; gap: 24px; padding: 31px 22px 31px 28px; }
   .contact-panel h2 { font-size: 2.35rem; }
   .contact-actions { align-items: stretch; flex-direction: column; width: 100%; }
