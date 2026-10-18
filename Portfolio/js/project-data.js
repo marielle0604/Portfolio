@@ -208,5 +208,12 @@ window.portfolioCertificates = [
     type: 'UI/UX',
     preview: 'images/Introduction_to_Figma_Certificate.png',
     file: 'https://drive.google.com/file/d/1LFTu_a7ARFOMUprQZs4rFSV05EoBBYc1/view?usp=sharing'
+  },
+  {
+    title: 'Design Thinking for Beginners',
+    issuer: 'Simplilearn',
+    type: 'UI/UX',
+    preview: 'images/Design_Thinking_for_Beginners.png',
+    file: 'https://drive.google.com/file/d/1QyO8S21zOeX6NfIRtCp12zA6muZbOsTg/view?usp=sharing'
   }
 ];
